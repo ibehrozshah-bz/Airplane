@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · AeroDesk Airplane Management System</title>
+<meta name="description" content="AeroDesk — airline operations dashboard for tickets, departures and arrivals." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Project styles -->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark"><i class="bi bi-send-fill"></i></div>
+      <div class="brand-text">
+        <div class="name">AeroDesk</div>
+        <div class="tag">Flight Ops</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a href="index.html" class="nav-link active">
+        <i class="bi bi-grid-1x2-fill"></i> Home Dashboard
+        <span class="runway"><span></span><span></span><span></span></span>
+      </a>
+      <a href="tickets.html" class="nav-link">
+        <i class="bi bi-ticket-perforated-fill"></i> Ticket Management
+      </a>
+      <a href="departures.html" class="nav-link">
+        <i class="bi bi-airplane-fill"></i> Departures
+      </a>
+      <a href="arrivals.html" class="nav-link">
+        <i class="bi bi-airplane-engines-fill"></i> Arrivals
+      </a>
+
+      <div class="nav-section-label mt-3">System</div>
+      <a href="#" class="nav-link"><i class="bi bi-gear-fill"></i> Settings</a>
+      <a href="#" class="nav-link"><i class="bi bi-life-preserver"></i> Help &amp; Support</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="sidebar-status">
+        <span class="dot"></span> All systems operational
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ===================== MAIN ===================== -->
+  <div class="main-area">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle navigation">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+
+      <div class="topbar-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search flights, tickets, passengers…">
+      </div>
+
+      <div class="topbar-actions">
+        <div class="d-none d-md-flex align-items-center gap-2 text-secondary" style="font-size:.82rem;">
+          <i class="bi bi-clock"></i> <span id="liveClock">--:--</span> local
+        </div>
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="bi bi-bell"></i><span class="badge-dot"></span>
+        </button>
+        <button class="icon-btn" aria-label="Messages">
+          <i class="bi bi-envelope"></i>
+        </button>
+        <div class="topbar-profile">
+          <div class="avatar">RA</div>
+          <div class="who">
+            <div class="name">Rana Ahmed</div>
+            <div class="role">Operations Manager</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page-content">
+
+      <div class="page-header">
+        <div>
+          <div class="eyebrow">Overview</div>
+          <h1>Good afternoon, Rana</h1>
+          <p>Here's what's happening across the terminal today, 15 July 2026.</p>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn-aero-outline"><i class="bi bi-download"></i> Export report</button>
+          <a href="tickets.html" class="btn-aero-primary"><i class="bi bi-plus-lg"></i> New Ticket</a>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-sky"><i class="bi bi-airplane-fill"></i></div>
+            <div class="stat-label">Flights Today</div>
+            <div class="stat-value">128</div>
+            <span class="stat-trend up"><i class="bi bi-arrow-up-right"></i> 6.2% vs yesterday</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-amber"><i class="bi bi-ticket-perforated-fill"></i></div>
+            <div class="stat-label">Active Tickets</div>
+            <div class="stat-value">4,382</div>
+            <span class="stat-trend up"><i class="bi bi-arrow-up-right"></i> 3.1% this week</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-success"><i class="bi bi-box-arrow-up-right"></i></div>
+            <div class="stat-label">Departures Pending</div>
+            <div class="stat-value">42</div>
+            <span class="stat-trend down"><i class="bi bi-arrow-down-right"></i> 2 delayed</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon bg-navy"><i class="bi bi-box-arrow-in-down-left"></i></div>
+            <div class="stat-label">Arrivals Pending</div>
+            <div class="stat-value">37</div>
+            <span class="stat-trend up"><i class="bi bi-check-circle"></i> On schedule</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <!-- Weekly traffic mini chart -->
+        <div class="col-lg-7">
+          <div class="panel h-100">
+            <div class="panel-head">
+              <div>
+                <h2>Weekly Flight Traffic</h2>
+                <p>Departures vs arrivals, last 7 days</p>
+              </div>
+              <span class="pill pill-sky"><i class="bi bi-graph-up-arrow"></i> +8.4%</span>
+            </div>
+            <div class="panel-body">
+              <div class="mini-chart">
+                <div class="bar-col"><div class="bar" style="height:55%"></div><div class="bar-label">Mon</div></div>
+                <div class="bar-col"><div class="bar alt" style="height:38%"></div><div class="bar-label">Tue</div></div>
+                <div class="bar-col"><div class="bar" style="height:72%"></div><div class="bar-label">Wed</div></div>
+                <div class="bar-col"><div class="bar alt" style="height:64%"></div><div class="bar-label">Thu</div></div>
+                <div class="bar-col"><div class="bar" style="height:90%"></div><div class="bar-label">Fri</div></div>
+                <div class="bar-col"><div class="bar alt" style="height:80%"></div><div class="bar-label">Sat</div></div>
+                <div class="bar-col"><div class="bar" style="height:60%"></div><div class="bar-label">Sun</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fleet status -->
+        <div class="col-lg-5">
+          <div class="panel h-100">
+            <div class="panel-head">
+              <div>
+                <h2>Fleet Status</h2>
+                <p>Live aircraft availability</p>
+              </div>
+            </div>
+            <div class="panel-body pt-2">
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <span class="d-flex align-items-center gap-2"><i class="bi bi-airplane-fill text-primary"></i> In the air</span>
+                <strong>54</strong>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <span class="d-flex align-items-center gap-2"><i class="bi bi-cone-striped text-warning"></i> At gate</span>
+                <strong>19</strong>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <span class="d-flex align-items-center gap-2"><i class="bi bi-tools text-secondary"></i> In maintenance</span>
+                <strong>6</strong>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2">
+                <span class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Ready / standby</span>
+                <strong>11</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent tickets + upcoming flights -->
+      <div class="row g-3 mb-4">
+        <div class="col-lg-7">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Recent Ticket Activity</h2>
+                <p>Latest bookings across all routes</p>
+              </div>
+              <a href="tickets.html" class="btn-aero-outline">View all</a>
+            </div>
+            <div class="panel-body table-wrap">
+              <table class="table-aero">
+                <thead>
+                  <tr><th>Passenger</th><th>Flight</th><th>Route</th><th>Status</th><th>Price</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ahsan Iqbal</td>
+                    <td class="flight-code">PK-302</td>
+                    <td class="route-cell">ISB <i class="bi bi-arrow-right"></i> DXB</td>
+                    <td><span class="pill pill-success">Confirmed</span></td>
+                    <td>$412</td>
+                  </tr>
+                  <tr>
+                    <td>Sara Khan</td>
+                    <td class="flight-code">EK-624</td>
+                    <td class="route-cell">LHE <i class="bi bi-arrow-right"></i> JFK</td>
+                    <td><span class="pill pill-amber">Pending</span></td>
+                    <td>$980</td>
+                  </tr>
+                  <tr>
+                    <td>Bilal Raza</td>
+                    <td class="flight-code">QR-618</td>
+                    <td class="route-cell">KHI <i class="bi bi-arrow-right"></i> DOH</td>
+                    <td><span class="pill pill-success">Confirmed</span></td>
+                    <td>$355</td>
+                  </tr>
+                  <tr>
+                    <td>Mehak Fatima</td>
+                    <td class="flight-code">TK-716</td>
+                    <td class="route-cell">ISB <i class="bi bi-arrow-right"></i> IST</td>
+                    <td><span class="pill pill-danger">Cancelled</span></td>
+                    <td>$540</td>
+                  </tr>
+                  <tr>
+                    <td>Usman Tariq</td>
+                    <td class="flight-code">PK-105</td>
+                    <td class="route-cell">ISB <i class="bi bi-arrow-right"></i> LHE</td>
+                    <td><span class="pill pill-success">Confirmed</span></td>
+                    <td>$95</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Next Departures</h2>
+                <p>Upcoming in the next few hours</p>
+              </div>
+              <a href="departures.html" class="btn-aero-outline">View all</a>
+            </div>
+            <div class="panel-body pt-2">
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <div>
+                  <div class="flight-code">PK-302 · Dubai</div>
+                  <div class="cell-sub">Gate A12 · Boeing 777</div>
+                </div>
+                <span class="pill pill-success">On Time</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <div>
+                  <div class="flight-code">EK-624 · New York</div>
+                  <div class="cell-sub">Gate B04 · Airbus A380</div>
+                </div>
+                <span class="pill pill-amber">Delayed</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                <div>
+                  <div class="flight-code">QR-618 · Doha</div>
+                  <div class="cell-sub">Gate C09 · Airbus A350</div>
+                </div>
+                <span class="pill pill-sky">Boarding</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center py-2">
+                <div>
+                  <div class="flight-code">TK-716 · Istanbul</div>
+                  <div class="cell-sub">Gate A03 · Boeing 787</div>
+                </div>
+                <span class="pill pill-success">On Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div>
+          <div class="f-brand">
+            <div class="brand-mark"><i class="bi bi-send-fill"></i></div>
+            <span>AeroDesk</span>
+          </div>
+          <p>A unified control panel for ticketing, departures and arrivals — built to keep terminal teams a step ahead of every flight.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6>Navigate</h6>
+          <ul>
+            <li><a href="index.html">Home Dashboard</a></li>
+            <li><a href="tickets.html">Ticket Management</a></li>
+            <li><a href="departures.html">Departures</a></li>
+            <li><a href="arrivals.html">Arrivals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Resources</h6>
+          <ul>
+            <li><a href="#">Flight Status API</a></li>
+            <li><a href="#">Terminal Map</a></li>
+            <li><a href="#">Baggage Policy</a></li>
+            <li><a href="#">Support Center</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Contact</h6>
+          <div class="contact-item"><i class="bi bi-geo-alt-fill"></i> Terminal 1, Islamabad International Airport, Pakistan</div>
+          <div class="contact-item"><i class="bi bi-telephone-fill"></i> +92 51 111 786 555</div>
+          <div class="contact-item"><i class="bi bi-envelope-fill"></i> ops@aerodesk.example</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AeroDesk Airplane Management System. All rights reserved.</span>
+        <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
